@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Cross } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 
 const navLinkClasses = ({ isActive }) =>
@@ -34,10 +35,10 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
         <Link to="/" className="flex items-center gap-2 text-brand-700 font-semibold text-lg">
           <span
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-white text-sm"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-white"
             aria-hidden="true"
           >
-            +
+            <Cross size={18} />
           </span>
           MediGuide
         </Link>

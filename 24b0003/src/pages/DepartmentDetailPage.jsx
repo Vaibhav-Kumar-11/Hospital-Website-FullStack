@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import useDepartments from '../hooks/useDepartments'
 import useDoctors from '../hooks/useDoctors'
 import DoctorCard from '../components/DoctorCard'
+import getDepartmentIcon from '../utils/departmentIcons'
 
 export default function DepartmentDetailPage() {
   const { slug } = useParams()
@@ -34,6 +35,8 @@ export default function DepartmentDetailPage() {
     )
   }
 
+  const Icon = getDepartmentIcon(department.icon)
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
       <Link to="/departments" className="text-sm text-brand-600 font-medium hover:text-brand-700">
@@ -41,8 +44,8 @@ export default function DepartmentDetailPage() {
       </Link>
 
       <div className="mt-4 flex items-center gap-4">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-3xl">
-          <span aria-hidden="true">{department.icon || '🏥'}</span>
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
+          <Icon size={28} aria-hidden="true" />
         </div>
         <div>
           <h1 className="text-3xl font-semibold text-slate-800">{department.name}</h1>

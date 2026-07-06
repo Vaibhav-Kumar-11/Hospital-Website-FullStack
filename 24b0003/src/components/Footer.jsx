@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Cross } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -6,8 +7,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
         <div>
           <div className="flex items-center gap-2 text-white font-semibold text-lg mb-2">
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500 text-white text-sm">
-              +
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500 text-white">
+              <Cross size={16} />
             </span>
             MediGuide
           </div>
